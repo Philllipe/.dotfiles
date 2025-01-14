@@ -67,6 +67,8 @@ bindkey '^n' history-search-forward
 
 # Aliases
 alias ls='ls --color'
+alias ..='cd ..'
+alias c='clear'
 
 # Shell integrations
 eval "$(fzf --zsh)"

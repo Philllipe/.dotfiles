@@ -12,7 +12,6 @@ window-padding-y = 4
 
 # Theme
 theme = tokyonight
-background = 1E1E2E
 
 # Other
 mouse-hide-while-typing = true
