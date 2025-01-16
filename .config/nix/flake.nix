@@ -27,6 +27,11 @@
         pkgs.zoxide
         pkgs.stow
         pkgs.tmux
+	pkgs.ripgrep
+        pkgs.neovim
+
+	# Other
+	pkgs.nodejs_23
       ];
 
       homebrew = {
