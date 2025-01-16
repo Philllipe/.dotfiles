@@ -69,6 +69,7 @@ bindkey '^n' history-search-forward
 alias ls='ls --color'
 alias ..='cd ..'
 alias c='clear'
+alias darwin-r='darwin-rebuild switch --flake "$(readlink -f ~/.config/nix)#macbook"'
 
 # Shell integrations
 eval "$(fzf --zsh)"
