@@ -70,6 +70,7 @@ alias ls='ls --color'
 alias ..='cd ..'
 alias c='clear'
 alias darwin-r='darwin-rebuild switch --flake "$(readlink -f ~/.config/nix)#macbook"'
+alias n='nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
