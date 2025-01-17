@@ -1,5 +1,5 @@
 return {
-	"folke/which-key.nvim",
-	event = "VimEnter",
-	opts = { delay = 500 },
+    "folke/which-key.nvim",
+    event = "VimEnter",
+    opts = { delay = 500 },
 }
