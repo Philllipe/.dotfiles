@@ -12,6 +12,7 @@ o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
+o.breakindent = true
 o.smartindent = true
 
 -- search
@@ -32,11 +33,10 @@ o.signcolumn = "yes"
 o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
-vim.schedule(function()
-    vim.opt.clipboard = 'unnamedplus'
-end)
+vim.opt.clipboard = "unnamedplus"
 
 -- other
 o.undofile = true
 o.swapfile = false
 o.updatetime = 200
+o.inccommand = "split"
