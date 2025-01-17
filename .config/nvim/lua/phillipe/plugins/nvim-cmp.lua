@@ -32,6 +32,10 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = {
+				{
+					name = "lazydev",
+					group_index = 0,
+				},
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
