@@ -14,10 +14,10 @@ return {
         },
     },
     opts = {
-        format_on_save = { timeout_ms = 500 },
+        format_on_save = true,
         default_format_opts = {
             lsp_format = "fallback",
-            timeout_ms = "500",
+            timeout_ms = 500,
             asnyc = false,
             quiet = false,
         },
