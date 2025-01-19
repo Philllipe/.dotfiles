@@ -1,17 +1,18 @@
 # Fonts
-font-size = 19
+font-size = 16
 font-family = JetBrains Mono Nerd Font
 
 # Theme
 theme = tokyonight
 
 # Window
-macos-titlebar-style = hidden
-window-decoration = true
-window-padding-x = 4
-window-padding-y = 4
-#background-opacity = 0.7
-#background-blur-radius = 20
+# macos-titlebar-style = hidden
+window-decoration = false 
+#window-padding-balance = true
+#window-padding-x = 4
+#window-padding-y = 0,4
+background-opacity = 0.75
+background-blur-radius = 0
 
 # Other
 mouse-hide-while-typing = true
