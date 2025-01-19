@@ -1,6 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufRead", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
         ---@diagnostic disable-next-line: missing-fields
@@ -33,6 +33,7 @@ return {
                 "c",
                 "javascript",
                 "typescript",
+                "html",
             },
         })
     end,

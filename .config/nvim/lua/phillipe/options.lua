@@ -5,7 +5,7 @@ vim.g.have_nerd_font = true
 -- line numbers
 o.number = true
 o.relativenumber = true
-o.cursorline = true
+o.cursorline = false
 
 -- tabs & indentation
 o.tabstop = 4
@@ -31,6 +31,7 @@ o.wrap = false
 o.scrolloff = 10
 o.signcolumn = "yes"
 o.showmode = false
+o.fillchars = { eob = " " }
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
