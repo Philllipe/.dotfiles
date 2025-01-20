@@ -3,4 +3,7 @@ return {
     { "nvim-lua/plenary.nvim", lazy = true },
     { "christoomey/vim-tmux-navigator" },
     { "stevearc/dressing.nvim", event = "VeryLazy", opts = {} },
+    { "folke/which-key.nvim", event = "VimEnter", opts = { delay = 500 } },
+    { "sindrets/diffview.nvim", event = "VeryLazy", opts = {} },
+    { "github/copilot.vim", cmd = "Copilot", event = "InsertEnter" },
 }
