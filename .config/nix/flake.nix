@@ -20,9 +20,11 @@
                     pkgs.raycast
                     pkgs.obsidian
                     pkgs.discord
+                    pkgs.vscode
 
                     # Utilities
                     pkgs.git
+                    pkgs.gh
                     pkgs.fzf
                     pkgs.zoxide
                     pkgs.stow
@@ -31,14 +33,19 @@
                     pkgs.lazygit
                     pkgs.tree-sitter
                     pkgs.fd
+                    pkgs.wget
                     pkgs.neovim
-
-                    # Other
+                    
+                    # Language Support
                     pkgs.nodejs_23
                 ];
 
                 homebrew = {
                     enable = true;
+                    taps = [];
+                    brews = [
+                        "dotnet"
+                    ];
                     casks = [
                         "ghostty"
                         "arc"
