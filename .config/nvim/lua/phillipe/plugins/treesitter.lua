@@ -34,6 +34,7 @@ return {
                 "javascript",
                 "typescript",
                 "html",
+                "c_sharp",
             },
         })
     end,

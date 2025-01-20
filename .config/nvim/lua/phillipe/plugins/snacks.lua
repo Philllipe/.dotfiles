@@ -20,30 +20,4 @@ return {
         scroll = {},
         words = {},
     },
-    keys = {
-        {
-            "<leader>nh",
-            function()
-                ---@diagnostic disable-next-line
-                Snacks.notifier.show_history()
-            end,
-            desc = "Notification History",
-        },
-        {
-            "<leader>nd",
-            function()
-                ---@diagnostic disable-next-line
-                Snacks.notifier.hide()
-            end,
-            desc = "Dismiss All Notifications",
-        },
-        {
-            "<leader>lg",
-            function()
-                ---@diagnostic disable-next-line
-                Snacks.lazygit()
-            end,
-            desc = "Open Lazygit",
-        },
-    },
 }

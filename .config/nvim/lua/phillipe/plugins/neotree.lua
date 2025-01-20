@@ -10,9 +10,7 @@ return {
     config = function()
         require("neo-tree").setup({
             window = { position = "right" },
-            close_if_last_window = true,
         })
-        vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle explorer" })
     end,
     -- LSP-integrated file renaming
     opts = function(_, opts)

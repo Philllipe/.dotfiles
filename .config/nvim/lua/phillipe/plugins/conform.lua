@@ -3,16 +3,6 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
-    keys = {
-        {
-            "<leader>f",
-            function()
-                require("conform").format()
-            end,
-            mode = { "n", "v" },
-            desc = "[F]ormat buffer",
-        },
-    },
     opts = {
         format_on_save = true,
         default_format_opts = {
