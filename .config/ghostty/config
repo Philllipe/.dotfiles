@@ -6,12 +6,12 @@ font-family = JetBrains Mono Nerd Font
 theme = tokyonight
 
 # Window
-# macos-titlebar-style = hidden
-window-decoration = false 
+macos-titlebar-style = hidden
+#window-decoration = true
 #window-padding-balance = true
 #window-padding-x = 4
 #window-padding-y = 0,4
-background-opacity = 0.75
+background-opacity = 0.8
 background-blur-radius = 0
 
 # Other

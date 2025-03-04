@@ -8,7 +8,7 @@ vim.g.have_nerd_font = true
 -- line numbers
 o.number = true
 o.relativenumber = true
-o.cursorline = false
+o.cursorline = true
 
 -- tabs & indentation
 o.tabstop = 4

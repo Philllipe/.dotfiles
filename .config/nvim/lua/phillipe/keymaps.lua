@@ -21,14 +21,14 @@ set("n", "<leader>nd", function() Snacks.notifier.hide() end, { desc = "[n]otifi
 -- Git (Snacks)
 set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "[l]azy [g]it" })
 
--- Trouble (Diagnostics)
+-- Diagnostics (Trouble)
 set("n", "<leader>xx", "<cmd>Diagnostics toggle<cr>", { desc = "Diagnostics" })
 set("n", "<leader>xX", "<cmd>Diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics" })
 set("n", "<leader>xa", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP: Show [a]ll Definitions / References" })
 set("n", "<leader>xl", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 
--- Telescope
+-- Picker (Telescope)
 local builtin = require("telescope.builtin")
 set("n", "<C-p>", builtin.git_files, { desc = "Git [p]roject Search" })
 set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind [f]iles" })
@@ -47,10 +47,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
             set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        map("gd", require("telescope.builtin").lsp_definitions, "[g]oto [d]efinition")
+        map("gd", builtin.lsp_definitions, "[g]oto [d]efinition")
         map("gD", vim.lsp.buf.declaration, "[g]oto [D]eclaration")
-        map("gr", require("telescope.builtin").lsp_references, "[g]oto [r]eferences")
-        map("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementation")
+        map("gr", builtin.lsp_references, "[g]oto [r]eferences")
+        map("gI", builtin.lsp_implementations, "[g]oto [I]mplementation")
 
         map("K", vim.lsp.buf.hover, "Hover Documentation")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
