@@ -2,3 +2,5 @@
 **/tmux/plugins
 lazy-lock.json
 .p10k.zsh
+.zsh_history
+.zcompdump
