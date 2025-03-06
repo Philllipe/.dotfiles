@@ -73,5 +73,7 @@ alias darwin-r='darwin-rebuild switch --flake "$(readlink -f ~/.config/nix)#macb
 alias n='nvim'
 
 # Shell integrations
-eval "$(fzf --zsh)"
+#eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
