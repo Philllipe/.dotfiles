@@ -1,4 +1,4 @@
 .DS_Store
 **/tmux/plugins
 lazy-lock.json
-
+.p10k.zsh
