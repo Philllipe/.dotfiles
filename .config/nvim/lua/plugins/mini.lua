@@ -2,7 +2,7 @@ return {
     {
         "echasnovski/mini.statusline",
         dependencies = {
-            -- { "echasnovski/mini.icons", opts = {} },
+            { "echasnovski/mini.icons", opts = {} },
             { "echasnovski/mini-git", main = "mini.git", opts = {} },
             {
                 "echasnovski/mini.diff",
@@ -28,6 +28,11 @@ return {
     {
         "echasnovski/mini.comment",
         event = "VeryLazy",
+        version = false,
+        opts = {},
+    },
+    {
+        "echasnovski/mini.files",
         version = false,
         opts = {},
     },

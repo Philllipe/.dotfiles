@@ -31,5 +31,7 @@ return {
                 },
             },
         },
+
+        cmdline = { completion = { menu = { auto_show = true } } },
     },
 }

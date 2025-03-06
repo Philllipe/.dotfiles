@@ -1,3 +1,3 @@
-require("phillipe.options")
-require("phillipe.lazy")
-require("phillipe.keymaps")
+require("config.options")
+require("config.lazy")
+require("config.keymaps")

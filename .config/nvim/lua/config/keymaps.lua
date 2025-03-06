@@ -11,8 +11,8 @@ set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "[y]ank" })
 set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "[p]aste after" })
 set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "[P]aste before" })
 
--- Explorer (Neotree)
-set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle [e]xplorer" })
+-- Explorer
+set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "[e]xplorer" })
 
 -- Notifications (Snacks)
 set("n", "<leader>nh", function() Snacks.notifier.show_history() end, { desc = "[n]otification [h]istory" })
