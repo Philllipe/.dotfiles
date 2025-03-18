@@ -4,12 +4,16 @@ local set = vim.keymap.set
 
 -- NOTE: leader key is set in options.lua
 
+-- General
 set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
+set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
+set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+set("n", "<leader>w", vim.lsp.buf.format, { desc = "Format"})
 
 -- Copy & Paste (Yanky)
 set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "[y]ank" })
-set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "[p]aste after" })
-set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "[P]aste before" })
+set({ "n", "x" }, "p", "<Plug>(YankyPutBefore)", { desc = "[p]aste after" })
+set({ "n", "x" }, "P", "<Plug>(YankyPutAfter)", { desc = "[P]aste before" })
 
 -- Explorer
 set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "[e]xplorer" })
@@ -22,8 +26,8 @@ set("n", "<leader>nd", function() Snacks.notifier.hide() end, { desc = "[n]otifi
 set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "[l]azy [g]it" })
 
 -- Diagnostics (Trouble)
-set("n", "<leader>xx", "<cmd>Diagnostics toggle<cr>", { desc = "Diagnostics" })
-set("n", "<leader>xX", "<cmd>Diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics" })
+set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics" })
+set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics" })
 set("n", "<leader>xa", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP: Show [a]ll Definitions / References" })
 set("n", "<leader>xl", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
@@ -53,13 +57,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("gI", builtin.lsp_implementations, "[g]oto [I]mplementation")
 
         map("K", vim.lsp.buf.hover, "Hover Documentation")
+        map("<leader>xd", vim.diagnostic.open_float, "test")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
         map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "[f]ind document [s]ymbols")
         map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[find] workspace [S]ymbols")
 
-        map("]d", vim.diagnostic.goto_next, "Goto Next [D]iagnostic")
-        map("[d", vim.diagnostic.goto_next, "Goto Previous [D]iagnostic")
+        -- map("]d", function() vim.diagnostic.jump({ count = 1 }) end, "Goto Next [D]iagnostic")
+        -- map("[d", function() vim.diagnostic.jump({ count = -1 }) end, "Goto Previous [D]iagnostic")
     end,
 })

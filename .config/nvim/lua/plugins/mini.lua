@@ -27,12 +27,22 @@ return {
     },
     {
         "echasnovski/mini.comment",
-        event = "VeryLazy",
         version = false,
+        event = "VeryLazy",
         opts = {},
     },
     {
         "echasnovski/mini.files",
+        version = false,
+        opts = {},
+    },
+    {
+        "echasnovski/mini.move",
+        version = "false",
+        opts = {},
+    },
+    {
+        "echasnovski/mini.surround",
         version = false,
         opts = {},
     },

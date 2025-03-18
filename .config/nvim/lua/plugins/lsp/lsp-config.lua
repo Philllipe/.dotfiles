@@ -32,6 +32,19 @@ return {
         -- Change diagnostic icons in the sign column (gutter)
         local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
         vim.diagnostic.config({
+            -- virtual_text = true,
+            underline = true,
+            update_in_insert = true,
+            severity_sort = true,
+            jump = { float = true },
+            float = {
+                focusable = false,
+                style = "minimal",
+                border = "rounded",
+                source = true,
+                header = "",
+                prefix = "",
+            },
             signs = {
                 text = {
                     [vim.diagnostic.severity.ERROR] = signs.Error,
@@ -40,10 +53,6 @@ return {
                     [vim.diagnostic.severity.HINT] = signs.Hint,
                 },
             },
-            virtual_text = true,
-            underline = true,
-            update_in_insert = true,
-            severity_sort = true,
         })
     end,
 }

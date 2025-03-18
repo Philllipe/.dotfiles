@@ -34,6 +34,7 @@ return {
                 -- others
                 "c",
                 "go",
+                "gomod",
                 "javascript",
                 "typescript",
                 "html",
