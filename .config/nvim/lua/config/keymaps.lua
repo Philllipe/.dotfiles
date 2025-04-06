@@ -8,15 +8,33 @@ local set = vim.keymap.set
 set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-set("n", "<leader>w", vim.lsp.buf.format, { desc = "Format"})
+set("n", "<leader>w", vim.lsp.buf.format, { desc = "Format" })
+
+--- Keep cusror in place
+set("n", "J", "mzJ`z")
+set("n", "<C-d>", "<C-d>zz")
+set("n", "<C-u>", "<C-u>zz")
+set("n", "n", "nzzzv")
+set("n", "N", "Nzzzv")
 
 -- Copy & Paste (Yanky)
+set("x", "<leader>p", [["_dP]])
 set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "[y]ank" })
-set({ "n", "x" }, "p", "<Plug>(YankyPutBefore)", { desc = "[p]aste after" })
-set({ "n", "x" }, "P", "<Plug>(YankyPutAfter)", { desc = "[P]aste before" })
+set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "[p]aste after" })
+set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "[P]aste before" })
 
--- Explorer
+--- Copy into system clipboard (CTRL-V to paste)
+set({"n", "v"}, "<leader>y", [["+y]])
+set("n", "<leader>Y", [["+Y]])
+set({"n", "v"}, "<leader>d", "\"_d")
+
+-- Explorer (Mini)
 set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "[e]xplorer" })
+
+-- Surround (tpope)
+set("n", "sd", "<Plug>Dsurround", { desc = "[s]urround [d]elete" })
+set("n", "sr", "<Plug>Csurround", { desc = "[s]urround [r]eplace" })
+set("x", "S", "<Plug>VSurround", { desc = "[S]urround" })
 
 -- Notifications (Snacks)
 set("n", "<leader>nh", function() Snacks.notifier.show_history() end, { desc = "[n]otification [h]istory" })
@@ -57,14 +75,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("gI", builtin.lsp_implementations, "[g]oto [I]mplementation")
 
         map("K", vim.lsp.buf.hover, "Hover Documentation")
-        map("<leader>xd", vim.diagnostic.open_float, "test")
+        map("<leader>xd", vim.diagnostic.open_float, "Hover [d]iagnostic")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
         map("<leader>fs", require("telescope.builtin").lsp_document_symbols, "[f]ind document [s]ymbols")
         map("<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[find] workspace [S]ymbols")
-
-        -- map("]d", function() vim.diagnostic.jump({ count = 1 }) end, "Goto Next [D]iagnostic")
-        -- map("[d", function() vim.diagnostic.jump({ count = -1 }) end, "Goto Previous [D]iagnostic")
     end,
 })

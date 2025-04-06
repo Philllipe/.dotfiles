@@ -17,7 +17,6 @@ return {
         bigfile = {},
         quickfile = {},
         lazygit = {},
-        scroll = {},
         words = {},
     },
 }
